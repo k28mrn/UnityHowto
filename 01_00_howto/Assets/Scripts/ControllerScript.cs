@@ -26,9 +26,11 @@ public class ControllerScript : MonoBehaviour
         // マウス位置座標をスクリーン座標からワールド座標に変換する
         screenToWorldPointPosition = Camera.main.ScreenToWorldPoint(position);
 
-        Vector3 pos = (screenToWorldPointPosition - gameObject.transform.position) * 0.1f;
         // ワールド座標に変換されたマウス座標を代入
+        Vector3 pos = (screenToWorldPointPosition - gameObject.transform.position) * 0.1f;
         gameObject.transform.position += pos;
         gameObject.transform.Rotate(new Vector3(1, 1, 1));
+
+        // gameObject.transform.position = screenToWorldPointPosition;
     }
 }
